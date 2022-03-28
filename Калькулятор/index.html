@@ -7,14 +7,26 @@
 </head>
 <body>
     <div class="container">
-        <div class="container-sm bg-primary text-white">
-            <p> <input type="text" id="n1"> <p id="todo"> Действие </p> <input type="text" id="n2"> </p>
-            <hr>
-            <button type="button" class="btn btn-secondary" onclick="plus()">+</button>
-            <button type="button" class="btn btn-secondary" onclick="minus()">-</button>
-            <button type="button" class="btn btn-secondary" onclick="multiplier()">*</button>
-            <hr>
-            <p id="out">Ответ</p>
+        <div class="col align-self-center container bg-light text-orange">
+            <div class="row">
+                
+                <input type="text" id="n1" placeholder="Число 1" class="col-md-5 form-control-lg"> 
+                <p id="todo" class="col-md-2"> Действие </p> 
+                <input type="text" id="n2" placeholder="Число 2" class="col-md-5 form-control-lg">
+                <hr>
+                <div class="row">
+                    <button type="button" class="btn btn-warning col-md-3 p-3" onclick="plus()">+</button>
+                    <button type="button" class="btn btn-warning col-md-3" onclick="minus()">-</button>
+                    <button type="button" class="btn btn-warning col-md-3" onclick="multiplier()">*</button>
+                    <button type="button" class="btn btn-warning col-md-3" onclick="division()">/</button>
+                </div>
+                <hr>
+                <div class="row">
+                    <p class="col-md-4"> </p>
+                    <p class="col-md-4" id="out">Ответ</p>
+                    <p class="col-md-4"> </p>
+                </div>
+            </div>
     </div>
     </div>
 
