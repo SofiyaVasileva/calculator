@@ -1,11 +1,31 @@
+let input = document.querySelector('.input')
+var regex1 = /[0-9]|[+ / - * . ( )]/;
+var regex2 = /[0-9]/;
+var alphabit = regex1
 function validate(evt) {
+    let simb = 0
     var theEvent = evt || window.event;
     var key = theEvent.keyCode || theEvent.which;
     key = String.fromCharCode( key );
-    var regex = /[0-9]|[+ / - * . ( )]/;
-    if( !regex.test(key) ) {
-      theEvent.returnValue = false;
-      if(theEvent.preventDefault) theEvent.preventDefault();
+    var check1 = /[0-1]/
+    if( !check1.test(key) ) {
+        simb = 0 }
+    else {
+        simb = 1
+    }
+    if (simb = 0) {
+        if( !alphabit.test(key) ) {
+            theEvent.returnValue = false;
+            if(theEvent.preventDefault) theEvent.preventDefault();
+            alphabit = regex1
+                }
+        }
+    if (simb = 1) {
+        if( !alphabit.test(key) ) {
+            theEvent.returnValue = false;
+            if(theEvent.preventDefault) theEvent.preventDefault();
+            alphabit = regex2
+                }
     }
   }
 
@@ -16,11 +36,11 @@ function clean() {
     document.form.textview.value = "";
 }
 function back() {
-    var exp = document.form.textview.value;
+    let exp = document.form.textview.value;
     document.form.textview.value = exp.substring(0,exp.length-1);
 }
 function equal() {
-    var exp = document.form.textview.value;
+    let exp = document.form.textview.value;
     if(exp) {
          document.form.textview.value = eval(exp);
     }
